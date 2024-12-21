@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4CAF50" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="manifest" href="./manifest.json" />
+    <title>Random Meal Generator</title>
+  </head>
+  <body>
+    <header>
+      <h1>Random Meal Generator</h1>
+    </header>
+
+    <main>
+      <div id="meal-container">
+        <button id="generate-btn">Generate Random Meal</button>
+        <div id="meal-info">
+          <h2 id="meal-title"></h2>
+          <img id="meal-image" src="" alt="Meal Image" />
+          <p id="meal-instructions"></p>
+          <a id="meal-video" href="">Watch Recipe Video</a>
+        </div>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then((registration) => {
+            console.log("Service Worker registered:", registration);
+          })
+          .catch((error) => {
+            console.error("Service Worker registration failed:", error);
+          });
+      }
+    </script>
+  </body>
+</html>
